@@ -365,6 +365,12 @@ class WebView extends React.Component {
       'always',
       'compatibility'
     ]),
+
+    /**
+     * Text zoom of the page in percent, used on Android only. The default is 100.
+     * @platform android
+     */
+    textZoom: PropTypes.number,
   };
 
   static defaultProps = {

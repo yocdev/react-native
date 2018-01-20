@@ -195,13 +195,20 @@ class WebView extends React.Component {
      * @platform android
      */
     saveFormDataDisabled: PropTypes.bool,
+
+    /**
+     * Text zoom of the page in percent, used on Android only. The default is 100.
+     * @platform android
+     */
+    textZoom: PropTypes.number,
   };
 
   static defaultProps = {
     javaScriptEnabled : true,
     thirdPartyCookiesEnabled: true,
     scalesPageToFit: true,
-    saveFormDataDisabled: false
+    saveFormDataDisabled: false,
+    textZoom: 100,
   };
 
   state = {
@@ -276,6 +283,7 @@ class WebView extends React.Component {
         allowUniversalAccessFromFileURLs={this.props.allowUniversalAccessFromFileURLs}
         mixedContentMode={this.props.mixedContentMode}
         saveFormDataDisabled={this.props.saveFormDataDisabled}
+        textZoom={this.props.textZoom}
       />;
 
     return (
